@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9EA05BAB24108EF80010B383 /* DateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA05BAA24108EF80010B383 /* DateHelpers.swift */; };
 		9EAE837624106F22008B13C5 /* Task+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE837524106F22008B13C5 /* Task+Convenience.swift */; };
 		9EAE837A24107042008B13C5 /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE837924107042008B13C5 /* TaskListTableViewController.swift */; };
 		9EAE837F24107142008B13C5 /* TaskDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE837E24107142008B13C5 /* TaskDetailTableViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9EA05BAA24108EF80010B383 /* DateHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
 		9EAE837524106F22008B13C5 /* Task+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Convenience.swift"; sourceTree = "<group>"; };
 		9EAE837924107042008B13C5 /* TaskListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		9EAE837E24107142008B13C5 /* TaskDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			children = (
 				9EAE837924107042008B13C5 /* TaskListTableViewController.swift */,
 				9EAE837E24107142008B13C5 /* TaskDetailTableViewController.swift */,
+				9EA05BAA24108EF80010B383 /* DateHelpers.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				9EAE837A24107042008B13C5 /* TaskListTableViewController.swift in Sources */,
 				9EAE8383241072C9008B13C5 /* TaskController.swift in Sources */,
 				9EAE837F24107142008B13C5 /* TaskDetailTableViewController.swift in Sources */,
+				9EA05BAB24108EF80010B383 /* DateHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@ class TaskController {
     var tasks: [Task] = []
     
     init() {
-        tasks = fetchTasks()
+        tasks = mockTasks
     }
     
     let mockTasks: [Task] = {
