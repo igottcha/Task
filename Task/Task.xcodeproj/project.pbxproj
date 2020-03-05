@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9EA05BAB24108EF80010B383 /* DateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA05BAA24108EF80010B383 /* DateHelpers.swift */; };
+		9EA05BAD241099A50010B383 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA05BAC241099A50010B383 /* ButtonTableViewCell.swift */; };
 		9EAE837624106F22008B13C5 /* Task+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE837524106F22008B13C5 /* Task+Convenience.swift */; };
 		9EAE837A24107042008B13C5 /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE837924107042008B13C5 /* TaskListTableViewController.swift */; };
 		9EAE837F24107142008B13C5 /* TaskDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE837E24107142008B13C5 /* TaskDetailTableViewController.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		9EA05BAA24108EF80010B383 /* DateHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
+		9EA05BAC241099A50010B383 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		9EAE837524106F22008B13C5 /* Task+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Convenience.swift"; sourceTree = "<group>"; };
 		9EAE837924107042008B13C5 /* TaskListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		9EAE837E24107142008B13C5 /* TaskDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				9EAE837924107042008B13C5 /* TaskListTableViewController.swift */,
 				9EAE837E24107142008B13C5 /* TaskDetailTableViewController.swift */,
 				9EA05BAA24108EF80010B383 /* DateHelpers.swift */,
+				9EA05BAC241099A50010B383 /* ButtonTableViewCell.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				FB4BD1A9237A1D88006648A7 /* SceneDelegate.swift in Sources */,
 				9EAE837A24107042008B13C5 /* TaskListTableViewController.swift in Sources */,
 				9EAE8383241072C9008B13C5 /* TaskController.swift in Sources */,
+				9EA05BAD241099A50010B383 /* ButtonTableViewCell.swift in Sources */,
 				9EAE837F24107142008B13C5 /* TaskDetailTableViewController.swift in Sources */,
 				9EA05BAB24108EF80010B383 /* DateHelpers.swift in Sources */,
 			);

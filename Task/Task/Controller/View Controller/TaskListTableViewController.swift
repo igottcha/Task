@@ -13,6 +13,7 @@ class TaskListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
@@ -26,9 +27,10 @@ class TaskListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? ButtonTableViewCell else {return UITableViewCell()}
         let task = TaskController.shared.tasks[indexPath.row]
-        cell.textLabel?.text = task.name
+        cell.update(task: task)
+        cell.delegate = self
         return cell
     }
     
@@ -42,13 +44,24 @@ class TaskListTableViewController: UITableViewController {
     }
     
     
-     // MARK: - Navigation
-     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showTaskDetail"{
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showTaskDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow, let destinationVC = segue.destination as? TaskDetailTableViewController else {return}
             let task = TaskController.shared.tasks[indexPath.row]
             destinationVC.task = task
         }
-     }
+    }
+}
+
+extension TaskListTableViewController: ButtonTableViewCellDelegate {
+    func buttonCellButtonTapped(_ sender: ButtonTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: sender) else {return}
+        let task = TaskController.shared.tasks[indexPath.row]
+        TaskController.shared.toggleIsCompleteFor(task: task)
+        sender.update(task: task)
+    }
+    
+    
 }

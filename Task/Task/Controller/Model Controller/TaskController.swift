@@ -17,27 +17,22 @@ class TaskController {
     
     //MARK: - Properties
     
-    var tasks: [Task] = []
-    
-    init() {
-        tasks = mockTasks
-    }
-    
-    let mockTasks: [Task] = {
-        let task1 = Task(name: "Buy Groceries", notes: "Milk, Eggs, Bread", due: Date())
-        let task2 = Task(name: "Meet Johnny for Lunch", notes: "", due: Date())
-        let task3 = Task(name: "Dominate at League", notes: "", due: Date(), isComplete: true)
-        return [task1, task2, task3]
-    }()
-    
-    func fetchTasks() -> [Task] {
+    var tasks: [Task] {
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
         return (try? CoreDataStack.context.fetch(fetchRequest)) ?? []
     }
     
+    func toggleIsCompleteFor(task: Task) {
+        task.isComplete = !task.isComplete
+        saveToPersistentStore()
+    }
+    
+    //MARK: - CRUD Functions
+    
     func add(name: String, notes: String?, due: Date?) {
         Task(name: name, notes: notes, due: due)
         saveToPersistentStore()
+        
     }
     
     func update(task: Task, name: String, notes: String?, due: Date?) {
@@ -45,6 +40,7 @@ class TaskController {
         task.notes = notes
         task.due = due
         saveToPersistentStore()
+        
     }
     
     func remove(task: Task) {
@@ -52,7 +48,7 @@ class TaskController {
         saveToPersistentStore()
     }
     
-    func saveToPersistentStore() {
+   private func saveToPersistentStore() {
         do {
             try CoreDataStack.context.save()
         } catch {

@@ -19,7 +19,12 @@ class TaskDetailTableViewController: UITableViewController {
     
     //MARK: - Properties
     
-    var task: Task?
+    var task: Task? {
+        didSet {
+            loadViewIfNeeded()
+            updateViews()
+        }
+    }
     var dueDateValue: Date?
     
     //MARK: - Lifecycle
