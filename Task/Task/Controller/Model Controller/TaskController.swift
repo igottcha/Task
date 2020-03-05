@@ -17,9 +17,19 @@ class TaskController {
     
     //MARK: - Properties
     
-    var tasks: [Task] {
-        let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
-        return (try? CoreDataStack.context.fetch(fetchRequest)) ?? []
+    var fetchedResultsController: NSFetchedResultsController<Task>
+    
+    init() {
+        let request: NSFetchRequest<Task> = Task.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "isComplete", ascending: true), NSSortDescriptor(key: "due", ascending: true)]
+        let resultsController: NSFetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: "isComplete", cacheName: nil)
+        fetchedResultsController = resultsController
+        
+        do {
+            try fetchedResultsController.performFetch()
+        } catch  {
+            print("There was an error in performing the fetch. \(error.localizedDescription)\(#function)")
+        }
     }
     
     func toggleIsCompleteFor(task: Task) {
